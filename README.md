@@ -1,4 +1,4 @@
-# 🧠 Idea-to-Survey Generator
+# 🧠 Formalyzer: an Idea-to-Survey Generator
 
 A four-agent AI-powered tool that takes a raw idea and helps you:
 1. Brainstorm early product directions
