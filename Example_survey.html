@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)file:///E:/July19Hackathon/survey.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Betting Data Experience Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .question-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        select, textarea, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect total width */
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .likert-scale label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        .likert-scale input[type="radio"] {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sports Betting Data Experience Survey</h1>
+        <p>Thank you for taking the time to complete our survey. Your feedback will help us understand how to make sports betting data more comprehensive and easier to understand.</p>
+
+        <form action="file:///E:/July19Hackathon/survey.html#" method="post">
+            <div class="question-section">
+                <h2>1. Understanding Your Current Experience</h2>
+
+                <div class="question">
+                    <label for="q1">How often do you engage in sports betting?</label>
+                    <select id="q1" name="q1" required="">
+                        <option value="">Please select</option>
+                        <option value="daily">Daily</option>
+                        <option value="several_times_week">Several times a week</option>
+                        <option value="once_week">Once a week</option>
+                        <option value="few_times_month">A few times a month</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label>When you're researching a sports bet, what kind of information do you typically look for? (Select all that apply)</label>
+                    <input type="checkbox" id="q2_odds" name="q2[]" value="odds"><label for="q2_odds">Odds</label><br>
+                    <input type="checkbox" id="q2_team_stats" name="q2[]" value="team_stats"><label for="q2_team_stats">Team statistics (e.g., win/loss records, offensive/defensive stats)</label><br>
+                    <input type="checkbox" id="q2_player_stats" name="q2[]" value="player_stats"><label for="q2_player_stats">Player statistics (e.g., individual performance, injury status)</label><br>
+                    <input type="checkbox" id="q2_recent_news" name="q2[]" value="recent_news"><label for="q2_recent_news">Recent news or team updates</label><br>
+                    <input type="checkbox" id="q2_weather" name="q2[]" value="weather"><label for="q2_weather">Weather conditions (for outdoor sports)</label><br>
+                    <input type="checkbox" id="q2_h2h" name="q2[]" value="h2h"><label for="q2_h2h">Head-to-head records between teams</label><br>
+                    <input type="checkbox" id="q2_expert_analysis" name="q2[]" value="expert_analysis"><label for="q2_expert_analysis">Expert analysis/predictions</label><br>
+                    <input type="checkbox" id="q2_social_media" name="q2[]" value="social_media"><label for="q2_social_media">Social media sentiment/buzz</label><br>
+                    <label for="q2_other">Other (Please specify):</label>
+                    <input type="text" id="q2_other" name="q2_other_text">
+                </div>
+
+                <div class="question">
+                    <label>On a scale of 1 to 5, how overwhelming do you find the amount of data available on typical sports betting platforms?</label>
+                    <div class="likert-scale">
+                        <input type="radio" id="q3_1" name="q3" value="1" required=""><label for="q3_1">1 = Not at all overwhelming</label><br>
+                        <input type="radio" id="q3_2" name="q3" value="2"><label for="q3_2">2</label><br>
+                        <input type="radio" id="q3_3" name="q3" value="3"><label for="q3_3">3</label><br>
+                        <input type="radio" id="q3_4" name="q3" value="4"><label for="q3_4">4</label><br>
+                        <input type="radio" id="q3_5" name="q3" value="5"><label for="q3_5">5 = Extremely overwhelming</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="q4">How much time do you typically spend gathering all the information you need before placing a bet?</label>
+                    <select id="q4" name="q4" required="">
+                        <option value="">Please select</option>
+                        <option value="less_15_min">Less than 15 minutes</option>
+                        <option value="15_30_min">15-30 minutes</option>
+                        <option value="30_60_min">30-60 minutes</option>
+                        <option value="more_1_hour">More than 1 hour</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h2>2. Exploring the "Context Gap" Hypothesis</h2>
+                <p><em>We're exploring ways to make sports betting data more comprehensive and easier to understand.</em></p>
+
+                <div class="question">
+                    <label>Imagine a platform that automatically shows you key contextual information (like weather, player injuries, recent team news, and social media buzz) alongside the betting odds for a game. How valuable would this be to you?</label>
+                    <div class="likert-scale">
+                        <input type="radio" id="q5_1" name="q5" value="1" required=""><label for="q5_1">1 = Not valuable</label><br>
+                        <input type="radio" id="q5_2" name="q5" value="2"><label for="q5_2">2</label><br>
+                        <input type="radio" id="q5_3" name="q5" value="3"><label for="q5_3">3</label><br>
+                        <input type="radio" id="q5_4" name="q5" value="4"><label for="q5_4">4</label><br>
+                        <input type="radio" id="q5_5" name="q5" value="5"><label for="q5_5">5 = Extremely valuable</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="q6">How often do you find yourself switching between different websites or apps to gather all the relevant information for a single bet?</label>
+                    <select id="q6" name="q6" required="">
+                        <option value="">Please select</option>
+                        <option value="always">Always</option>
+                        <option value="often">Often</option>
+                        <option value="sometimes">Sometimes</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label>If you had a tool that presented all relevant contextual data for a game in one place, how much more confident would you feel in making your betting decisions?</label>
+                    <div class="likert-scale">
+                        <input type="radio" id="q7_1" name="q7" value="1" required=""><label for="q7_1">1 = No more confident</label><br>
+                        <input type="radio" id="q7_2" name="q7" value="2"><label for="q7_2">2</label><br>
+                        <input type="radio" id="q7_3" name="q7" value="3"><label for="q7_3">3</label><br>
+                        <input type="radio" id="q7_4" name="q7" value="4"><label for="q7_4">4</label><br>
+                        <input type="radio" id="q7_5" name="q7" value="5"><label for="q7_5">5 = Much more confident</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="q8">What specific types of contextual information (beyond basic stats and odds) do you feel are most crucial for making informed betting decisions, but are often hard to find or connect?</label>
+                    <textarea id="q8" name="q8"></textarea>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h2>3. Potential Solutions &amp; Preferences</h2>
+
+                <div class="question">
+                    <label>Would you be interested in a feature that provides a "snapshot" or summary of critical contextual factors for an upcoming game?</label>
+                    <input type="radio" id="q9_yes" name="q9" value="yes" required=""><label for="q9_yes">Yes, definitely</label><br>
+                    <input type="radio" id="q9_maybe" name="q9" value="maybe"><label for="q9_maybe">Maybe</label><br>
+                    <input type="radio" id="q9_no" name="q9" value="no"><label for="q9_no">No, not really</label>
+                </div>
+
+                <div class="question">
+                    <label>How important is it for this contextual information to be updated in real-time or near real-time?</label>
+                    <div class="likert-scale">
+                        <input type="radio" id="q10_1" name="q10" value="1" required=""><label for="q10_1">1 = Not important</label><br>
+                        <input type="radio" id="q10_2" name="q10" value="2"><label for="q10_2">2</label><br>
+                        <input type="radio" id="q10_3" name="q10" value="3"><label for="q10_3">3</label><br>
+                        <input type="radio" id="q10_4" name="q10" value="4"><label for="q10_4">4</label><br>
+                        <input type="radio" id="q10_5" name="q10" value="5"><label for="q10_5">5 = Extremely important</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label for="q11">What would be the biggest benefit of having all contextual information readily available on one platform?</label>
+                    <textarea id="q11" name="q11"></textarea>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit Survey" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+        </form>
+    </div>
+
+</body></html>
