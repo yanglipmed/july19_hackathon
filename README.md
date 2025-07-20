@@ -1,118 +1,98 @@
-# Hackathon Agent
+# 🧠 Idea-to-Survey Generator
 
-A simple AI agent built with Google's Agent Development Kit (ADK) that integrates with a deployed Gemma model on Cloud Run. This agent is designed to help hackathon participants with various tasks.
+A four-agent AI-powered tool that takes a raw idea and helps you:
+1. Brainstorm early product directions
+2. Summarize and extract themes
+3. Shape hypotheses
+4. Generate a structured, thoughtful user survey
 
-## Features
+Whether you're a solo founder, a product strategist, or an early-stage team, this tool supports your thinking from vague ideas to validated assumptions — all in one flow.
 
-The agent provides four main capabilities:
+---
 
-1. **Ask Gemma** - Ask questions and get answers from the deployed Gemma model
-2. **Generate Code** - Generate code in various programming languages with explanations
-3. **Brainstorm Ideas** - Get creative ideas for projects and topics
-4. **Explain Concepts** - Get explanations of complex concepts at different difficulty levels
+## 🚀 What It Does
 
-## Prerequisites
+You input a **topic or idea**. The system runs through four specialized agents to help you clarify your thinking and generate actionable insights.
 
-- Python 3.12 or higher
-- `uv` package manager (will be installed automatically with Docker)
-- A deployed Gemma model on Cloud Run (set via `GEMMA_URL` environment variable)
+### 🧩 4-Step Workflow
 
-## Local Development
+---
 
-### Setup
+### 🧠 Agent 1: `brainstorm_ideas`
 
-1. Install dependencies:
+A collaborative and curious partner for raw ideation.
 
-```bash
-uv sync
-```
+**Purpose**: Collect unstructured thoughts, emotional reactions, screenshots, voice notes, and rants — anything that helps explore early product directions.
 
-2. Set your environment variables:
+**Output**:
+- A numbered list of ideas
+- Each with a title, description, and potential value
 
-```bash
-export GEMMA_URL="https://your-gemma-service-url"
-```
+---
 
-3. Run the server:
+### 🔍 Agent 2: `summarize_brainstormideas`
 
-```bash
-uv run python server.py
-```
+A pattern-sensing AI that clusters raw inputs into insight themes.
 
-The agent will be available at:
+**Purpose**: Spot behavioral or emotional patterns in your brainstormed ideas — without filtering or reducing creativity.
 
-- Web interface: `http://localhost:8080/adk`
-- API documentation: `http://localhost:8080/docs`
-- Health check: `http://localhost:8080/health`
+**Output**:
+- Evocative theme titles
+- 1–2 sentence summaries of tensions or needs
+- Linked quotes/fragments supporting each theme
 
-## Cloud Run Deployment
+---
 
-### Quick Deploy
+### 🧪 Agent 3: `shape_hypothesis`
 
-```bash
-# Deploy the agent to Cloud Run
-gcloud run deploy hackathon-agent \
-    --source . \
-    --region europe-west1 \
-    --no-allow-unauthenticated \
-    --set-env-vars GEMMA_URL=https://your-gemma-service-url
+A product strategy engine that converts insights into testable ideas.
 
-# Get the service URL
-gcloud run services describe hackathon-agent --region=us-central1 --format='value(status.url)'
-```
+**Purpose**: Translate themes into creative product directions and hypotheses about user behavior or beliefs.
 
-### Testing with Authentication
+**Output**:
+- Product or service ideas
+- Variations or stretch concepts
+- Testable hypotheses tied to user tension
 
-```bash
-# Get an authentication token
-TOKEN=$(gcloud auth print-identity-token)
+---
 
-# Test the agent
-curl -H "Authorization: Bearer ${TOKEN}" \
-  "https://your-hackathon-agent-url/adk"
-```
+### 📋 Agent 4: `generate_survey`
 
+A user-research assistant that creates clear, empathetic surveys.
 
-## Architecture
+**Purpose**: Design a structured survey that validates the riskiest assumptions — in user-friendly language.
 
-The agent consists of:
+**Output**:
+- Warm-up section (demographics, lifestyle)
+- Per-hypothesis survey questions (Likert, multiple choice, follow-ups)
+- Optional closing section for open feedback
+- Total ~12–15 thoughtful questions
 
-1. **GemmaClient**: Handles authenticated communication with the deployed Gemma model
-2. **Agent Tools**: Four main functions that use the Gemma client to provide services
-3. **ADK Agent**: The main agent that orchestrates tool usage and provides the chat interface
-4. **FastAPI Server**: Exposes the agent via REST API and web interface
+---
 
-## Security
+## ✅ Why Use This Tool?
 
-- The agent automatically handles authentication when deployed on Cloud Run
-- For local development, it gracefully falls back to unauthenticated requests
-- All external requests to Gemma are properly authenticated using Google Cloud identity tokens
+- Turn messy ideas into structured insights
+- Uncover emotional drivers behind user behavior
+- Validate assumptions early with real users
+- Speed up product discovery & reduce blind spots
 
-## Customization
+---
 
-You can easily extend the agent by:
+## 🛠 How to Use
 
-1. Adding new tools to `hackathon_agent/agent.py`
-2. Modifying the agent's instruction and behavior
-3. Adding new API endpoints to `server.py`
-4. Customizing the Gemma client for different models or configurations
+1. Clone the repo
+2. Run the main script with a topic or idea
+3. Follow the step-by-step outputs from each agent
+4. Copy-paste or refine the final survey
 
-## Troubleshooting
+> This tool is modular — you can run each agent independently or as a full pipeline.
 
-### Common Issues
+---
 
-1. **"GEMMA_URL environment variable is required"**: Set the `GEMMA_URL` environment variable to your deployed Gemma service URL
-2. **Authentication errors**: Ensure your Cloud Run service has the necessary IAM permissions to call other services
-3. **Timeout errors**: The Gemma client uses a 30-second timeout; you may need to adjust this for slower models
-
-### Logs
-
-Check the application logs:
+## 📦 Installation
 
 ```bash
-gcloud run services logs tail hackathon-agent --region=us-central1
-```
-
-## License
-
-This project is licensed under the Apache License, Version 2.0.
+git clone https://github.com/yanglipmed/july19_hackathon.git
+cd idea-to-survey
+pip install -r requirements.txt
